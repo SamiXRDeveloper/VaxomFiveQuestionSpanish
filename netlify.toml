@@ -1,0 +1,61 @@
+# Unity WebGL — place in build output root (same folder as index.html).
+# Prefer Disabled compression on Netlify, or enable matching [[headers]] below.
+
+[[headers]]
+  for = "/Build/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+
+[[headers]]
+  for = "/Build/*.data"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+
+[[headers]]
+  for = "/Build/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+# --- Gzip (only if Unity WebGL Compression Format = Gzip) ---
+# [[headers]]
+#   for = "/Build/*.wasm.gz"
+#   [headers.values]
+#     Content-Type = "application/wasm"
+#     Content-Encoding = "gzip"
+# [[headers]]
+#   for = "/Build/*.data.gz"
+#   [headers.values]
+#     Content-Type = "application/octet-stream"
+#     Content-Encoding = "gzip"
+# [[headers]]
+#   for = "/Build/*.framework.js.gz"
+#   [headers.values]
+#     Content-Type = "application/javascript"
+#     Content-Encoding = "gzip"
+# [[headers]]
+#   for = "/Build/*.js.gz"
+#   [headers.values]
+#     Content-Type = "application/javascript"
+#     Content-Encoding = "gzip"
+
+# --- Brotli (only if Unity WebGL Compression Format = Brotli) ---
+# [[headers]]
+#   for = "/Build/*.wasm.br"
+#   [headers.values]
+#     Content-Type = "application/wasm"
+#     Content-Encoding = "br"
+# [[headers]]
+#   for = "/Build/*.data.br"
+#   [headers.values]
+#     Content-Type = "application/octet-stream"
+#     Content-Encoding = "br"
+# [[headers]]
+#   for = "/Build/*.framework.js.br"
+#   [headers.values]
+#     Content-Type = "application/javascript"
+#     Content-Encoding = "br"
+# [[headers]]
+#   for = "/Build/*.js.br"
+#   [headers.values]
+#     Content-Type = "application/javascript"
+#     Content-Encoding = "br"

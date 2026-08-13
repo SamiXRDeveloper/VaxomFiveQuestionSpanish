@@ -1,0 +1,39 @@
+# Unity WebGL — Netlify headers (copied into build output root next to index.html)
+#
+# Compression Disabled builds (.wasm / .data / .js):
+/Build/*.wasm
+  Content-Type: application/wasm
+
+/Build/*.data
+  Content-Type: application/octet-stream
+
+/Build/*.js
+  Content-Type: application/javascript
+
+# Gzip builds (uncomment / use if Unity compression = Gzip):
+# /Build/*.wasm.gz
+#   Content-Type: application/wasm
+#   Content-Encoding: gzip
+# /Build/*.data.gz
+#   Content-Type: application/octet-stream
+#   Content-Encoding: gzip
+# /Build/*.js.gz
+#   Content-Type: application/javascript
+#   Content-Encoding: gzip
+# /Build/*.framework.js.gz
+#   Content-Type: application/javascript
+#   Content-Encoding: gzip
+
+# Brotli builds (uncomment / use if Unity compression = Brotli):
+# /Build/*.wasm.br
+#   Content-Type: application/wasm
+#   Content-Encoding: br
+# /Build/*.data.br
+#   Content-Type: application/octet-stream
+#   Content-Encoding: br
+# /Build/*.js.br
+#   Content-Type: application/javascript
+#   Content-Encoding: br
+# /Build/*.framework.js.br
+#   Content-Type: application/javascript
+#   Content-Encoding: br
